@@ -9,6 +9,9 @@
 header{
   position: top;
 }
+h2{
+  color:white;
+}
 body {
   background-color:rgb(32, 32, 32);
   background-repeat: no-repeat;
