@@ -99,6 +99,7 @@ H1{
   width: 100%  ; 
   height: inherit; 
   overflow:auto;
+  
 }
 
 .divTable::-webkit-scrollbar {
@@ -184,24 +185,6 @@ tbody tr td.acao {
   .modal label {
     font-size: 12px;
   }
- .iniciar{
-  height: 100px;
-  line-height: 00px;
-  padding: 50px 50px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 200px;
-  align-items: center;
-  font-size: 20px;
-  color: white;
-  background-color: rgb(13, 245, 187);
-  margin-bottom: 3px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  text-align: top;
-  position: center;
 }
 
 .modal-container {
@@ -357,6 +340,8 @@ img {
 }
 .visit{
   color: white;
+  
+  
 }
 .visit:hover{
   color: rgb(13, 245, 187);
