@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUESTIONÁRIO</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="visita.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+
+
+<body>
+
+  <div class="container">
+    <caption>
+      <ul>
+        <a href="index.html">Home</a>
+        <a href="visita.html">Visita on line</a>
+        <img src="./todos.jpg">
+        <a href="login.html">Login</a>
+        <a href="login.html">Relatório</a>
+      </ul>
+    </caption>
+    <div class="header">
+      <span>Relatório</span>
+      <button onclick="openModal()" id="new">Incluir</i></button>
+    </div>
+
+    <div class="divTable">
+      <table>
+
+        <thead>
+          <tr >
+            <th class="coluna">Nome</th>
+            <th class="outro">CPF</th>
+            <th class="coluna">Endereço</th>
+            <th class="outro">Bairro</th>
+            <th class="outro">CEP</th>
+            <th class="ponto">Pontos</th>
+            <th class="ponto">Risco</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <div>
+            <div class="cliente">
+              <label for="username">Nome</label>
+              <input id="username" type="text" required placeholder="Name"  onblur = "classificar()"/>
+
+              <label for="usercpf">CPF</label>
+              <input id="usercpf" type="string" required placeholder="CPF" />
+            </div>
+
+            <div class="endereco">
+              <div class="end">
+                <label for="userendereco">Endereço</label>
+                <input id="userendereco" type="text" required placeholder="Endereco" />
+              </div>
+
+              <label for="userbairro">Bairro</label>
+              <input id="userbairro" type="string" required placeholder="Bairro" />
+
+              <label for="usercep">CEP</label>
+              <input id="usercep" type="string" required placeholder="CEP" />
+
+            </div>
+
+
+            <fieldset>
+              <h2>Auto verficação</h2>
+              <h3>1. Você conhece os cuidados necessários para evitar a proliferação do mosquito transmissor do Aedes Aegypti, Zika e Chikungunya?  </h3>
+              <div class="radio">
+                <input id="userques1" type=number required placeholder="0 - Conheço muito / 5 - Desconheço" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+            <fieldset></fieldset>
+              <h3>2. Você adota os cuidados necessários para evitar o mosquito? </h3>
+              <div class="radio">
+                <input id="userques2" type=number required placeholder="0 - Semanalmente / 5 - Nunca" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+
+            <fieldset>
+              <h3>3. A quantos anos não recebe a visita de um agente de edemias?
+               </h3>
+              <div class="radio">
+                <input id="userques3" type="number" required placeholder="0 anos a 5 anos" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+
+
+            <fieldset>
+              <h3>4. Sua caixa d´agua tem tampa</h3>
+              <div class="radio">
+                <input id="userques4" type="number" required placeholder="0 - Sim/ 5 - Não ou Não sei " onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>5. Os vasos de plantas possuem aparador com areia?  </h3>
+              <div class="radio">
+                <input id="userques5" type="number" required placeholder="0 - Todos/ 5 - Nenhum" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>6. Há em sua casa depósito fechado para guarda de objetos em desuso? </h3>
+              <div class="radio">
+                <input id="userques6" type="number" required placeholder="0 - Sim / 5 - Não" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>7. Marque os itens que possui em casa: </h3>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Caixa de descarga e sanitário velho</h4>
+              <div class="radio">
+                <input id="userques7a" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>-  Pias e lavatórios em desuso</h4>
+              <div class="radio">
+                <input id="userques7b" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>-  Regadores e protetores de plantas</h4>
+              <div class="radio">
+                <input id="userques7c" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>-  Guarda comida, vasilhas, bacias e baldes </h4>
+              <div class="radio">
+                <input id="userques7d" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Jarro de flores</h4>
+              <div class="radio">
+                <input id="userques7e" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Depósito de geladeira</h4>
+              <div class="radio">
+                <input id="userques7f" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Cobertura de flandres ou zinco</h4>
+              <div class="radio">
+                <input id="userques7g" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Casca de ovo</h4>
+              <div class="radio">
+                <input id="userques7h" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Caco de vidro e telhas</h4>
+              <div class="radio">
+                <input id="userques7i" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Vasilha para comida ou água de animais</h4>
+              <div class="radio">
+                <input id="userques7j" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h4>- Sapato abandonado</h4>
+              <div class="radio">
+                <input id="userques7k" type="number" required placeholder="0 ou 1" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>8. Você identificou algum objeto nas áreas externas com presença de água?  </h3>
+              <div class="radio">
+                <input id="userques8" type="number" required placeholder="0 - Não/ 5 - Sim" onblur = "classificar()"/>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>9. Encontrou a presença de larvas ou mosquitos? </h3>
+                <div class="radio">
+                  <input id="userques9" type="number" required placeholder="0 - Não / 5 - Sim" onblur = "classificar()"/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>10. Houve aumento no número de mosquitos nas últimas semanas?</h3>
+                <div class="radio">
+                  <input id="userques10" type="number" required placeholder="0 - Não/ 5 - Sim" onblur = "classificar()"/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>11. Alguém teve febre ou virose recentemente? </h3>
+                <div class="radio">
+                  <input id="userques11" type="number" required placeholder="0 - Não/ 5 - Sim" onblur = "classificar()"/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+              <h3>12. Houve algum caso confirmado de Chikungunya, dengue e Zika confirmado em sua residência? </h3>
+                <div class="radio">
+                  <input id="userques12" type="number" required placeholder="0 - Não/ 5 - Sim" onblur = "classificar()"/>
+                </div>
+            </fieldset>
+
+          </div>
+
+          <div id="teste"></div>
+          <button id="createButton">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+<script src="visita.js"></script>
+
+</html>
