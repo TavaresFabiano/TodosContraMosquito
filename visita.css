@@ -99,7 +99,6 @@ H1{
   width: 100%  ; 
   height: inherit; 
   overflow:auto;
-  
 }
 
 .divTable::-webkit-scrollbar {
@@ -185,6 +184,8 @@ tbody tr td.acao {
   .modal label {
     font-size: 12px;
   }
+  .iniciar{
+  font-size: 20px;
 }
 
 .modal-container {
@@ -340,8 +341,6 @@ img {
 }
 .visit{
   color: white;
-  
-  
 }
 .visit:hover{
   color: rgb(13, 245, 187);
